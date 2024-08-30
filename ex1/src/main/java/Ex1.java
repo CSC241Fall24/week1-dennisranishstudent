@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Ex1 {
     /**
      * Calculate the sum of an arithmetic progression.
@@ -8,14 +10,25 @@ public class Ex1 {
      * @return The sum of the arithmetic progression
      */
     public static long calculateGaussSum(long start, long step, int count) {
-        // TODO: Implement this method to calculate the sum of the arithmetic progression
-        // Hint: Use a loop to add up all the terms
-        return 0; // This is a placeholder return value. Replace it with your calculation.
+        long total = 0, num = start;
+		for(int i = 0; i < count; i++, num += step) total += num;
+        return total;
+
+        //return start * count + (step * count * (count - 1)) / 2;
     }
 
     public static void main(String[] args) {
-        // TODO: Call the calculateGaussSum method with the correct parameters
-        // and print the result
-        // Parameters for the problem: start = 81297, step = 198, count = 100
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("start: ");
+        long start = s.nextLong();
+        System.out.print("step: ");
+        long step = s.nextLong();
+        System.out.print("count: ");
+        int count = s.nextInt();
+
+        s.close();
+
+        System.out.println("calculateGaussSum(" + start + ", " + step + ", " + count + ") = " + calculateGaussSum(start, step, count));
     }
 }
