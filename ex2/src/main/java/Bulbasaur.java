@@ -36,7 +36,7 @@ public class Bulbasaur {
     // toString method
     @Override
     public String toString() {
-        return "Level: " + id + ", ID: " + level;
+        return "Level: " + level + ", ID: " + id;
     }
 
     // equals method
